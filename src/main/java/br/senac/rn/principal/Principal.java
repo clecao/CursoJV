@@ -13,13 +13,13 @@ public class Principal {
 //    PARA INSERIR O DADOS.
 //    public static void main(String[] args) {
 //        CategoriaDAO dao = new CategoriaDAO();
-//        dao.inserir(new Categoria(0, "Alimentação", "Só comidas gostosas"));
+//        dao.inserir(new Categoria(0, "Calçado", "Só para os pes"));
 // TERMINA AQUI (TEM O FINAL MESMO LÁ EM BAIXO.        
       
-    public static void main(String[] args) {
-        
-       ProdutoDAO dao = new ProdutoDAO();
-       dao.inserir(produto);
+//    public static void main(String[] args) {
+//        
+//       ProdutoDAO dao = new ProdutoDAO();
+//       dao.inserir(produto);
 
     
         
