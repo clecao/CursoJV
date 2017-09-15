@@ -11,9 +11,9 @@ import br.senac.rn.dao.ProdutoDAO;
 
 public class Principal {
 //    PARA INSERIR O DADOS.
-//    public static void main(String[] args) {
-//        CategoriaDAO dao = new CategoriaDAO();
-//        dao.inserir(new Categoria(0, "Calçado", "Só para os pes"));
+    public static void main(String[] args) {
+        CategoriaDAO dao = new CategoriaDAO();
+        dao.inserir(new Categoria(0, "Calçado", "Só para os pes"));
 // TERMINA AQUI (TEM O FINAL MESMO LÁ EM BAIXO.        
       
 //    public static void main(String[] args) {
