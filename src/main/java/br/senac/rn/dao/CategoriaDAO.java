@@ -50,4 +50,15 @@ public class CategoriaDAO {
         return consulta.getResultList();
     }
     
+//    public List<Sexo> buscarTodos(){
+//        TypedQuery<Sexo> consulta = manager.createQuery("SELECT s FROM Sexo s", Sexo.class);
+//        return consulta.getResultList();
+//    }
+//    
+//    public Sexo buscarPorId(int id){
+//        return manager.find(Sexo.class, id);
+    
+    public Categoria buscarPorId(int id){
+       return manager.find(Categoria.class, id);
+     }
 }

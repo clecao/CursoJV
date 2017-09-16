@@ -36,7 +36,7 @@ public class ClienteDAO {
     }
     
     public List<Cliente> buscarTodos(){
-        TypedQuery<Cliente> consulta = manager.createQuery("SELECT cli FROM Cliente cli", Cliente.class);
+        TypedQuery<Cliente> consulta = manager.createQuery("SELECT c FROM tb_cliente c", Cliente.class);
         return consulta.getResultList();
     }
     

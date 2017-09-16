@@ -1,6 +1,7 @@
 package br.sanac.rn.model;
 
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.AUTO)   //Para que a chave primaria fique automatica
     private int id;
     private String nome;
+    @Column(unique = true) // Para não repetir o campo cpf. (Em baixo)
     private String cpf;
     @ManyToOne
     private Sexo sexo;
