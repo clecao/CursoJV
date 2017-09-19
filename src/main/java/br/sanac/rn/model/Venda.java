@@ -1,5 +1,6 @@
 package br.sanac.rn.model;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -10,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity(name = "tb_vendas")  // Para poder usar bd e criar tabela
@@ -22,19 +25,30 @@ public class Venda {
     private Cliente cliente;
     @ManyToMany
     private List<Produto> produto;
+    @Temporal(TemporalType.DATE)    // Para mostrar as opções Ctrl Espaço - PARA DIZER O QUE VOCÊ QUER DO "Calendar"
+    private Calendar data;
     private float valor;
     
     // Alt + Ins escolhe construtor.
+
     public Venda() {
     }
-    
-    // Alt + Ins escolhe construtor e marca todos os campos.
-    public Venda(int id, Cliente cliente, List<Produto> produto, float valor) {
+
+    public Venda(Cliente cliente, List<Produto> produto, Calendar data, float valor) {
+        this.cliente = cliente;
+        this.produto = produto;
+        this.data = data;
+        this.valor = valor;
+    }
+
+    public Venda(int id, Cliente cliente, List<Produto> produto, Calendar data, float valor) {
         this.id = id;
         this.cliente = cliente;
         this.produto = produto;
+        this.data = data;
         this.valor = valor;
     }
+
     
      // Clica em Alt + Insert e escolhe Get Set  e Encapsular para tornar publica
     public int getId() {
@@ -69,15 +83,24 @@ public class Venda {
         this.valor = valor;
     }
     
+    public Calendar getData() {
+        return data;
+    }
+
+    public void setData(Calendar data) {
+        this.data = data;
+    }
+    
     // Clica em Alt + Insert e equals/hashCode - Seleciona tudos dos dois lados.
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + this.id;
-        hash = 29 * hash + Objects.hashCode(this.cliente);
-        hash = 29 * hash + Objects.hashCode(this.produto);
-        hash = 29 * hash + Float.floatToIntBits(this.valor);
+        int hash = 3;
+        hash = 43 * hash + this.id;
+        hash = 43 * hash + Objects.hashCode(this.cliente);
+        hash = 43 * hash + Objects.hashCode(this.produto);
+        hash = 43 * hash + Objects.hashCode(this.data);
+        hash = 43 * hash + Float.floatToIntBits(this.valor);
         return hash;
     }
 
@@ -105,11 +128,23 @@ public class Venda {
         if (!Objects.equals(this.produto, other.produto)) {
             return false;
         }
+        if (!Objects.equals(this.data, other.data)) {
+            return false;
+        }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Venda{" + "cliente=" + cliente + ", produto=" + produto + ", data=" + data + ", valor=" + valor + '}';
+    }
+
     
     
     
+   
+
+
     
     
     

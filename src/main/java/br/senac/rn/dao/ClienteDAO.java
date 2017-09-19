@@ -7,6 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+
+
 public class ClienteDAO {
     private EntityManager manager;
     private EntityManagerFactory factory;
@@ -46,6 +48,14 @@ public class ClienteDAO {
 
     public Object buscarPorId() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public List<Cliente> buscaPorCpf(String cpf){
+        String jpql ="select c from tb_cliente c where c.cpf like :cpfCliente";
+        TypedQuery<Cliente> consulta = manager.createQuery(jpql, Cliente.class);
+        consulta.setParameter("cpfCliente", "%" + cpf + "%");
+        //return consulta.getSingleResult();    //Retorna apenas um registro.
+        return consulta.getResultList();
     }
     
 }
