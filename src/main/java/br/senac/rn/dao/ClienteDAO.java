@@ -1,6 +1,6 @@
 package br.senac.rn.dao;
 
-import br.sanac.rn.model.Cliente;
+import br.senac.rn.model.Cliente;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -1,8 +1,8 @@
 package br.senac.rn.dao;
 // @author clean
 
-import br.sanac.rn.model.Produto;
-import br.sanac.rn.model.Venda;
+import br.senac.rn.model.Produto;
+import br.senac.rn.model.Venda;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

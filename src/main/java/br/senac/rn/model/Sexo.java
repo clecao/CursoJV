@@ -1,4 +1,4 @@
-package br.sanac.rn.model;
+package br.senac.rn.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

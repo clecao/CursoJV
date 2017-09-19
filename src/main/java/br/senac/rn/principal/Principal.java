@@ -1,26 +1,36 @@
 package br.senac.rn.principal;
 
 //import br.sanac.rn.model.Sexo;
-import br.sanac.rn.model.Categoria;
-import br.sanac.rn.model.Cliente;
-import br.sanac.rn.model.Produto;
-import br.sanac.rn.model.Sexo;
-import br.sanac.rn.model.Venda;
-import br.senac.rn.dao.ClienteDAO;
-import br.senac.rn.dao.ProdutoDAO;
+
 import br.senac.rn.dao.SexoDAO;
-import br.senac.rn.dao.VendaDAO;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import br.senac.rn.model.Sexo;
+
+//import br.sanac.rn.model.Categoria;
+//import br.senac.rn.model.Cliente;
+//import br.senac.rn.model.Produto;
+//import br.senac.rn.model.Sexo;
+//import br.senac.rn.model.Venda;
+//import br.senac.rn.dao.ClienteDAO;
+//import br.senac.rn.dao.ProdutoDAO;
+//import br.senac.rn.dao.SexoDAO;
+//import br.senac.rn.dao.VendaDAO;
+//import java.util.ArrayList;
+//import java.util.Calendar;
+//import java.util.List;
 
 //import br.senac.rn.dao.SexoDAO;
 public class Principal {
 
     public static void main(String[] args) {
+    
+       SexoDAO dao = new SexoDAO();
+       Sexo sexo = dao.selectById(5);
+       sexo.setNome("TROCADO");
+       sexo.setSigla('X');
+       dao.update(sexo);
        
-        new SexoDAO().insert(new Sexo(0, "Transexual", 'T'));
-        System.exit(0);
+        System.exit(0);    
+        
         
     }
 }
@@ -106,4 +116,31 @@ public class Principal {
        venda.setValor(valor);
        
        new VendaDAO().inserir(venda);
+*/
+
+/*      USANDO O GenericDAO para inserir
+    public static void main(String[] args) {
+       
+        new SexoDAO().insert(new Sexo(0, "Transexual", 'T'));
+        System.exit(0);
+        
+    }
+*/
+
+/*
+ ----- LISTAR TODOS
+ System.out.println(new SexoDAO().selectALL()));
+        System.exit(0);
+    ------------
+    ESCOLHENDO UM
+System.out.println(new SexoDAO().selectById(1));
+        System.exit(0);
+*/
+
+/*       ALTERAR 
+       SexoDAO dao = new SexoDAO();
+       Sexo sexo = dao.selectById(5);
+       sexo.setNome("TROCADO");
+       sexo.setSigla('X');
+       dao.update(sexo);
 */

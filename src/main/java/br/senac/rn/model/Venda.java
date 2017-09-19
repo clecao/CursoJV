@@ -1,4 +1,4 @@
-package br.sanac.rn.model;
+package br.senac.rn.model;
 
 import java.util.Calendar;
 import java.util.List;

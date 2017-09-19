@@ -5,7 +5,7 @@
  */
 package br.senac.rn.dao;
 
-import br.sanac.rn.model.Sexo;
+import br.senac.rn.model.Sexo;
 import br.senac.rn.util.GenericDAO;
 
 /**

@@ -1,5 +1,6 @@
-package br.sanac.rn.model;
+package br.senac.rn.model;
 
+import br.senac.rn.model.Categoria;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
